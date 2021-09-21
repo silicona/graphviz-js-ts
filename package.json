@@ -1,0 +1,26 @@
+{
+  "name": "ts-graphviz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./dist/basico3.js",
+    "basico2-ts": "tsc && node ./dist/basico2.js",
+    "basico-ts": "tsc && node ./dist/basico.js",
+    "basico-js": "node ./src/basico.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@ts-graphviz/node": "^0.4.0",
+    "graphviz": "^0.0.9",
+    "path": "^0.12.7",
+    "ts-graphviz": "^0.16.0",
+    "ts-node": "^10.2.1",
+    "typeorm": "^0.2.37",
+    "typescript": "^4.4.3",
+    "util": "^0.12.4"
+  }
+}
