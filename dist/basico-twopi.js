@@ -45,20 +45,22 @@ var node_1 = require("@ts-graphviz/node");
 var filewalker_1 = require("./filewalker");
 var componentes_1 = require("./componentes");
 var servicios = componentes_1.comps;
-var g = (0, ts_graphviz_1.digraph)('G', {
-//center: true,
-//margin: 1
+var g = (0, ts_graphviz_1.graph)('G', {
+    center: true,
+    //layout: "fdp",
+    layout: "twopi",
+    root: "moduloUnoController",
+    ranksep: 2,
+    //layout: "circo"
+    //layout: "neato",
+    //splines: "polyline",
+    //splines: "ortho"
+    splines: "true"
 });
-var subDals = g.createSubgraph('clusterA', {
-    rank: "source",
-    //style: "filled",
-    //style: "striped",
-    //style: "rounded striped",
-    style: "radial",
-    bgcolor: "aqua:red"
-});
+var subDals = g.createSubgraph('clusterA', { rank: "source" });
 var subServices = g.createSubgraph('B', { rank: "" });
-var subControllers = g.createSubgraph('c', { rank: "sink" });
+var subControllers = g.createSubgraph('clusterC', { rank: "sink" });
+//const subgraphA = g.createSubgraph('A', { rank: "sink" });
 for (var i in servicios) {
     //console.log(i)
     var shape = "ellipse";
@@ -67,33 +69,31 @@ for (var i in servicios) {
         subDals.createNode(i);
     }
     else if (/Controller$/.test(i)) {
-        shape = "trapezium";
-        //shape="octagon"
+        shape = "octagon";
         subControllers.createNode(i);
     }
-    else if (/Servicio$/.test(i)) {
+    else {
         subServices.createNode(i);
     }
     g.createNode(i, { shape: shape });
 }
-var rels = {};
 for (var i in servicios) {
     var deps = servicios[i];
     for (var x in deps) {
-        if (rels[i + '-' + deps[x]]) {
-            g.removeEdge(rels[i + '-' + deps[x]]);
-            delete rels[i + '-' + deps[x]];
-            rels[deps[x] + '-' + i] = g.createEdge([deps[x], i], { dir: "both", color: "red" });
-        }
-        else
-            rels[deps[x] + '-' + i] = g.createEdge([deps[x], i]);
+        g.createEdge([deps[x], i]);
+        //g.createEdge([i, deps[x]])
     }
 }
 var dot = (0, ts_graphviz_1.toDot)(g);
 (0, node_1.exportToFile)(dot, {
     format: 'png',
-    output: path_1.default.resolve(__dirname, '../graphs/basico3.png')
+    output: path_1.default.resolve(__dirname, '../graphs/basico-twopi.png')
 });
+/*
+exportToFile(dot, {
+    format: 'pdf',
+    output: path.resolve(__dirname, '../graphs/basico-graph.pdf')
+})*/
 function jarjar() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start:twopi": "tsc && node ./dist/basico-twopi.js",
     "start": "tsc && node ./dist/basico3.js",
     "basico2-ts": "tsc && node ./dist/basico2.js",
     "basico-ts": "tsc && node ./dist/basico.js",
