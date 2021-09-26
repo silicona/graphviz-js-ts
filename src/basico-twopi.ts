@@ -3,9 +3,9 @@ import { digraph, graph, toDot } from 'ts-graphviz';
 import { exportToFile } from '@ts-graphviz/node';
 import fs from 'fs'
 import { filewalker } from './filewalker';
-import { comps } from './componentes';
+import { componentes } from './componentes';
 
-let servicios: any = comps
+let servicios: any = componentes
 const g = graph('G', { 
     center: true,
     //layout: "fdp",

@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "archivos": "tsc && node ./dist/archivos.js",
+    "archivos": "tsc && node ./dist/generaInformeArchivos.js",
     "start:twopi": "tsc && node ./dist/basico-twopi.js",
-    "start": "tsc && node ./dist/basico3.js",
+    "start": "tsc && node ./dist/generaGraficoApp.js",
+    "start:fun": "tsc && node ./dist/generaGraficoApp.js mode=funcionalidad",
+    "start:mod": "tsc && node ./dist/generaGraficoApp.js mode=modulo",
     "basico2-ts": "tsc && node ./dist/basico2.js",
     "basico-ts": "tsc && node ./dist/basico.js",
     "basico-js": "node ./src/basico.js",

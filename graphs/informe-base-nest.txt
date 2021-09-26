@@ -1,0 +1,31 @@
+/Users/nadies/typescript/base-nest/src/app.controller.specOld.ts
+/Users/nadies/typescript/base-nest/src/app.controller.ts
+/Users/nadies/typescript/base-nest/src/app.module.ts	-- ** Test **
+/Users/nadies/typescript/base-nest/src/app.service.ts
+/Users/nadies/typescript/base-nest/src/main.ts
+/Users/nadies/typescript/base-nest/src/config/Main.config.ts
+/Users/nadies/typescript/base-nest/src/config/Main2.config.ts
+/Users/nadies/typescript/base-nest/src/core/BaseController.ts
+/Users/nadies/typescript/base-nest/src/core/BaseEntity.ts
+/Users/nadies/typescript/base-nest/src/core/BaseService.ts
+/Users/nadies/typescript/base-nest/src/core/TenancyProvider.ts
+/Users/nadies/typescript/base-nest/src/support/HttpException.filter.ts
+/Users/nadies/typescript/base-nest/src/modules/Cats/Cats.module.ts
+/Users/nadies/typescript/base-nest/src/modules/Cats/@types/index.ts
+/Users/nadies/typescript/base-nest/src/modules/Cats/controllers/Cat.controller.ts
+/Users/nadies/typescript/base-nest/src/modules/Cats/services/Cat.service.ts
+/Users/nadies/typescript/base-nest/src/modules/main/Contactos/Contacto.module.ts	-- ** Test **
+/Users/nadies/typescript/base-nest/src/modules/main/Contactos/controllers/Contacto.controller.ts
+/Users/nadies/typescript/base-nest/src/modules/main/Contactos/controllers/ContactoBase.controller.ts
+/Users/nadies/typescript/base-nest/src/modules/main/Contactos/entities/Contacto.entity.ts
+/Users/nadies/typescript/base-nest/src/modules/main/Contactos/services/Contacto.service.ts	-- ** Test **
+/Users/nadies/typescript/base-nest/src/modules/main/Contactos/services/ContactoBase.service.ts	-- ** Test **
+/Users/nadies/typescript/base-nest/src/modules/main/Estado/entities/Estado.entity.ts
+/Users/nadies/typescript/base-nest/src/modules/main/Usuarios/Usuario.module.ts	-- ** Test **
+/Users/nadies/typescript/base-nest/src/modules/main/Usuarios/controllers/Usuario.controller.ts
+/Users/nadies/typescript/base-nest/src/modules/main/Usuarios/entities/Usuario.entity.ts
+/Users/nadies/typescript/base-nest/src/modules/main/Usuarios/services/Usuario.service.ts	-- ** Test **
+/Users/nadies/typescript/base-nest/src/modules/tenant/Usuarios/Usuario.module.ts	-- ** Test **
+/Users/nadies/typescript/base-nest/src/modules/tenant/Usuarios/controllers/Usuario.controller.ts
+/Users/nadies/typescript/base-nest/src/modules/tenant/Usuarios/entities/Usuario.entity.ts
+/Users/nadies/typescript/base-nest/src/modules/tenant/Usuarios/services/Usuario.service.ts	-- ** Test **

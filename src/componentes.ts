@@ -1,41 +1,20 @@
-export const comps = {
-    moduloUnoController: [
-        "moduloUnoServicio",
-        "moduloDosServicio",
-        "moduloTresServicio",
-        "moduloCuatroServicio",
-    ],
-    moduloUnoServicio: [
-        "moduloUnoDal",
-        "moduloDosServicio",
-        "moduloDosDal",
-        "moduloTresDal",
-    ],
-    moduloDosController: [
-        "moduloDosServicio"
-    ],
-    moduloDosServicio: [
-        "moduloDosDal",
-        "moduloUnoServicio",
-        "moduloTresServicio"
-    ],
-    moduloDosServicioDos: [
-        "moduloDosServicio",
-        "moduloDosDal"
-    ],
-    moduloTresController: [
-        "moduloTresServicio",
-    ],
-    moduloTresServicio: [
-        "moduloTresDal",
-        "moduloDosServicio",
-        "moduloDosServicioDos"
-    ],
-    moduloCuatroServicio: [
-        //"moduloTresDal",
-        //"moduloDosServicioDos"
-    ],
-    moduloUnoDal: [],
-    moduloDosDal: [],
-    moduloTresDal: [],
+export const componentes = {
+	AppController: ["AppService"],
+	AppModule: ["AppController", "AppService"],
+	AppService: [],
+	CatsModule: ["CatController", "CatsService"],
+	CatController: ["CatsService"],
+	CatsService: ["Cat"],
+	ContactoModule: ["ContactoController", "ContactoService"],
+	ContactoController: ["ContactoService"],
+	ContactoBaseController: ["ContactoBaseService"],
+	ContactoEntity: [],
+	ContactoService: ["ContactoEntity", "UsuarioService"],
+	ContactoBaseService: ["Connection"],
+	EstadoEntity: [],
+	UsuarioModule: ["UsuarioController", "UsuarioService"],
+	UsuarioController: ["UsuarioService"],
+	UsuarioEntity: [],
+	UsuarioService: ["UsuarioEntity"],
+	Connection: [],
 }

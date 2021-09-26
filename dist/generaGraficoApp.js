@@ -99,15 +99,11 @@ else {
     for (var i in servicios) {
         if (!/Module$/.test(i))
             continue;
-        var color = "red";
-        if (specs.includes(i.toLowerCase() || ''))
-            color = "green";
+        color = specs.includes(i.toLowerCase()) ? "green" : "red";
         g.createNode(i, { color: color });
         var deps = servicios[i];
         for (var x in deps) {
-            color = "red";
-            if (specs.includes(deps[x].toLowerCase() || ''))
-                color = "green";
+            color = specs.includes(deps[x].toLowerCase()) ? "green" : 'red';
             g.createNode(deps[x], { color: color });
             g.createEdge([i, deps[x]], { dir: edgeDir });
         }

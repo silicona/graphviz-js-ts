@@ -44,7 +44,7 @@ var ts_graphviz_1 = require("ts-graphviz");
 var node_1 = require("@ts-graphviz/node");
 var filewalker_1 = require("./filewalker");
 var componentes_1 = require("./componentes");
-var servicios = componentes_1.comps;
+var servicios = componentes_1.componentes;
 var g = (0, ts_graphviz_1.graph)('G', {
     center: true,
     //layout: "fdp",
