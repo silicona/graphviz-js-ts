@@ -12,6 +12,18 @@ async function esperar(ms: number, results: string[], file: string, done: Functi
         setTimeout(resolve, ms)
     })
 }
+
+function eliminarIndeseables(list: string[]): string[]{
+
+    var noDeseados = ['node_modules','dist', '.git','.gitignore', '.DS_Store']
+    
+    for(var i in noDeseados) {
+        if(list.indexOf(noDeseados[i]) > -1) list.splice(list.indexOf(noDeseados[i]), 1)
+    }
+
+    return list
+}
+
 /**
  * Explores recursively a directory and returns all the filepaths and folderpaths in the callback.
  * 
@@ -26,10 +38,9 @@ export function filewalker(dir: any, done: any) {
         
         if (err) return done(err);
 
-        list.splice(list.indexOf('node_modules'), 1)
+        list = eliminarIndeseables(list)
 
         var pending = list.length;
-
         if (!pending) return done(null, results);
 
         list.forEach(function(file){
@@ -37,22 +48,18 @@ export function filewalker(dir: any, done: any) {
 
             fs.stat(file, async function(err, stat){
                 // If directory, execute a recursive call
-                //console.log(stat.)
                 if (stat && stat.isDirectory()) {
-                    //console.log(file)
+                    
                     // Add directory to array [comment if you need to remove the directories from the array]
-                    results.push(file);
-                    /*
+                    //results.push(file);
+                    
                     filewalker(file, function(err: any, res: any){
-                        //console.log(res)
                         results = results.concat(res);
                         if (!--pending) done(null, results);
                         
-                    })*/
-                    await esperar(5000, results, file, done, pending)
+                    })
 
                 } else {
-                    //console.log(file)
                     results.push(file);
 
                     if (!--pending) done(null, results);
@@ -60,6 +67,4 @@ export function filewalker(dir: any, done: any) {
             });
         });
     });
-
-    //return results
 };

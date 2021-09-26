@@ -1,0 +1,22 @@
+/Users/nadies/typescript/ts-graphviz/package-lock.json
+/Users/nadies/typescript/ts-graphviz/package.json
+/Users/nadies/typescript/ts-graphviz/tsconfig.json
+/Users/nadies/typescript/ts-graphviz/graphs/basico-graph.pdf
+/Users/nadies/typescript/ts-graphviz/graphs/basico-graph.png
+/Users/nadies/typescript/ts-graphviz/graphs/basico-ts.png
+/Users/nadies/typescript/ts-graphviz/graphs/basico-twopi.png
+/Users/nadies/typescript/ts-graphviz/graphs/basico.png
+/Users/nadies/typescript/ts-graphviz/graphs/basico2-ts.png
+/Users/nadies/typescript/ts-graphviz/graphs/basico2-ts.svg
+/Users/nadies/typescript/ts-graphviz/graphs/basico3.png
+/Users/nadies/typescript/ts-graphviz/graphs/listado.txt
+/Users/nadies/typescript/ts-graphviz/graphs/specs.txt
+/Users/nadies/typescript/ts-graphviz/src/archivos.ts	-- ** Test **
+/Users/nadies/typescript/ts-graphviz/src/basico-graph.ts	-- ** Test **
+/Users/nadies/typescript/ts-graphviz/src/basico-twopi.ts	-- ** Test **
+/Users/nadies/typescript/ts-graphviz/src/basico.js	-- ** Test **
+/Users/nadies/typescript/ts-graphviz/src/basico.ts	-- ** Test **
+/Users/nadies/typescript/ts-graphviz/src/basico2.ts
+/Users/nadies/typescript/ts-graphviz/src/basico3.ts
+/Users/nadies/typescript/ts-graphviz/src/componentes.ts
+/Users/nadies/typescript/ts-graphviz/src/filewalker.ts

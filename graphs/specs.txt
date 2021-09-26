@@ -1,0 +1,5 @@
+/Users/nadies/typescript/ts-graphviz/spec/archivos.spec.ts
+/Users/nadies/typescript/ts-graphviz/spec/basico-graph.spec.ts
+/Users/nadies/typescript/ts-graphviz/spec/basico-twopi.spec.ts
+/Users/nadies/typescript/ts-graphviz/spec/basico.spec.js
+/Users/nadies/typescript/ts-graphviz/spec/basico.spec.ts
