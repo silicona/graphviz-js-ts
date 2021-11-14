@@ -33,12 +33,15 @@ var archivo: string = fs.readFileSync('../base-nest/spec/support/listTests.txt',
 var specs: string[] = archivo.split('\n').map(spec => spec.split('/').pop()?.replace('.spec.ts', '').replace('.', '').toLowerCase() || 'Jarjar')
 
 const g = digraph('G', {
+  id: 'graphJar',
   rankdir: rankDir
   /*
   center: true, 
   margin: 1
   */
 })
+
+//g.set('id', 'graphJar')
 
 if (modo !== "modulo") {
 
@@ -83,7 +86,7 @@ if (modo !== "modulo") {
   for (var i in servicios) {
     if (/Module$/.test(i)) continue
 
-    var deps = servicios[i]
+    var deps = servicios[i].deps
     for (var x in deps) {
 
       var edgePoints: EdgeTargetLikeTuple = [deps[x], i]
@@ -107,7 +110,7 @@ if (modo !== "modulo") {
     color = specs.includes(i.toLowerCase()) ? "green" : "red"
     g.createNode(i, { color: color })
     
-    var deps = servicios[i]
+    var deps = servicios[i].deps
     for (var x in deps) {
       color = specs.includes(deps[x].toLowerCase()) ? "green" : 'red'
       g.createNode(deps[x], { color: color })
@@ -122,4 +125,14 @@ const dot = toDot(g)
 exportToFile(dot, {
   format: 'png',
   output: path.resolve(__dirname, '../graphs/app-' + modo + '.png')
+})
+
+exportToFile(dot, {
+  format: 'json',
+  output: path.resolve(__dirname, '../graphs/app-' + modo + '.json')
+})
+
+exportToFile(dot, {
+  format: 'svg',
+  output: path.resolve(__dirname, '../graphs/app-' + modo + '.svg')
 })

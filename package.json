@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "gen:comp": "tsc && node ./dist/generaComponentes.js",
     "archivos": "tsc && node ./dist/generaInformeArchivos.js",
     "start:twopi": "tsc && node ./dist/basico-twopi.js",
     "start": "tsc && node ./dist/generaGraficoApp.js",
@@ -12,6 +13,7 @@
     "basico2-ts": "tsc && node ./dist/basico2.js",
     "basico-ts": "tsc && node ./dist/basico.js",
     "basico-js": "node ./src/basico.js",
+    "start:web": "npx parcel ./src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,6 +21,7 @@
   "license": "ISC",
   "devDependencies": {
     "@ts-graphviz/node": "^0.4.0",
+    "@types/jquery": "^3.5.8",
     "graphviz": "^0.0.9",
     "path": "^0.12.7",
     "ts-graphviz": "^0.16.0",
@@ -26,5 +29,8 @@
     "typeorm": "^0.2.37",
     "typescript": "^4.4.3",
     "util": "^0.12.4"
+  },
+  "dependencies": {
+    "parcel": "^2.0.0"
   }
 }

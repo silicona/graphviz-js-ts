@@ -34,12 +34,14 @@ var servicios = componentes_1.componentes;
 var archivo = fs_1.default.readFileSync('../base-nest/spec/support/listTests.txt', 'utf-8');
 var specs = archivo.split('\n').map(function (spec) { var _a; return ((_a = spec.split('/').pop()) === null || _a === void 0 ? void 0 : _a.replace('.spec.ts', '').replace('.', '').toLowerCase()) || 'Jarjar'; });
 var g = (0, ts_graphviz_1.digraph)('G', {
+    id: 'graphJar',
     rankdir: rankDir
     /*
     center: true,
     margin: 1
     */
 });
+//g.set('id', 'graphJar')
 if (modo !== "modulo") {
     var subDals = g.createSubgraph('clusterA', {
         rank: subDalRank,
@@ -79,7 +81,7 @@ if (modo !== "modulo") {
     for (var i in servicios) {
         if (/Module$/.test(i))
             continue;
-        var deps = servicios[i];
+        var deps = servicios[i].deps;
         for (var x in deps) {
             var edgePoints = [deps[x], i];
             if (modo == "funcionalidad")
@@ -101,7 +103,7 @@ else {
             continue;
         color = specs.includes(i.toLowerCase()) ? "green" : "red";
         g.createNode(i, { color: color });
-        var deps = servicios[i];
+        var deps = servicios[i].deps;
         for (var x in deps) {
             color = specs.includes(deps[x].toLowerCase()) ? "green" : 'red';
             g.createNode(deps[x], { color: color });
@@ -112,5 +114,13 @@ else {
 var dot = (0, ts_graphviz_1.toDot)(g);
 (0, node_1.exportToFile)(dot, {
     format: 'png',
-    output: path_1.default.resolve(__dirname, '../graphs/basico3-' + modo + '.png')
+    output: path_1.default.resolve(__dirname, '../graphs/app-' + modo + '.png')
+});
+(0, node_1.exportToFile)(dot, {
+    format: 'json',
+    output: path_1.default.resolve(__dirname, '../graphs/app-' + modo + '.json')
+});
+(0, node_1.exportToFile)(dot, {
+    format: 'svg',
+    output: path_1.default.resolve(__dirname, '../graphs/app-' + modo + '.svg')
 });
